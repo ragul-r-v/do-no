@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude AI - Iran War LinkedIn Image</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .card {
+    width: 1200px;
+    height: 630px;
+    position: relative;
+    overflow: hidden;
+    background: #05050d;
+  }
+
+  /* Deep space background */
+  .bg-layer {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 75% 50%, rgba(180, 30, 30, 0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 80% at 20% 50%, rgba(20, 40, 100, 0.25) 0%, transparent 65%),
+      linear-gradient(135deg, #05050d 0%, #080818 50%, #0d0510 100%);
+  }
+
+  /* Grid lines */
+  .grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Glowing orb - top right */
+  .orb {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(220, 50, 50, 0.25) 0%, transparent 70%);
+    filter: blur(30px);
+  }
+
+  /* Circuit-like decoration */
+  .circuit {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.06;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(100,150,255,0.5) 40px, rgba(100,150,255,0.5) 41px),
+      repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(100,150,255,0.5) 80px, rgba(100,150,255,0.5) 81px);
+  }
+
+  /* Scan line effect */
+  .scanline {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0,0,0,0.08) 3px,
+      rgba(0,0,0,0.08) 4px
+    );
+    pointer-events: none;
+  }
+
+  /* Left content panel */
+  .content {
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 580px;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .eyebrow-line {
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #e03030, #ff6b6b);
+  }
+
+  .eyebrow-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: #e05050;
+    text-transform: uppercase;
+  }
+
+  .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 86px;
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: #f0ede8;
+    margin-bottom: 8px;
+    text-shadow: 0 0 60px rgba(220,50,50,0.2);
+  }
+
+  .headline .red { color: #e84040; }
+  .headline .dim { color: #8a8580; }
+
+  .subline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: rgba(200, 195, 190, 0.7);
+    margin-bottom: 38px;
+    line-height: 1.4;
+  }
+
+  /* Stat boxes */
+  .stats {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .stat-box {
+    flex: 1;
+    padding: 14px 18px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #e03030, transparent);
+  }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: #e84040;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: rgba(180,175,170,0.6);
+    text-transform: uppercase;
+  }
+
+  /* Tags */
+  .tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    padding: 6px 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: rgba(200,195,190,0.55);
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.02);
+  }
+
+  .tag.hot {
+    border-color: rgba(232, 64, 64, 0.4);
+    color: rgba(232, 120, 100, 0.8);
+    background: rgba(232, 64, 64, 0.06);
+  }
+
+  /* Right side visual */
+  .visual-panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 500px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Target reticle */
+  .reticle {
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 280px;
+    height: 280px;
+  }
+
+  .reticle-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(232, 64, 64, 0.35);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse-ring 3s ease-in-out infinite;
+  }
+
+  .r1 { width: 280px; height: 280px; border-color: rgba(232, 64, 64, 0.2); animation-delay: 0s; }
+  .r2 { width: 200px; height: 200px; border-color: rgba(232, 64, 64, 0.35); animation-delay: 0.4s; }
+  .r3 { width: 130px; height: 130px; border-color: rgba(232, 64, 64, 0.5); animation-delay: 0.8s; }
+  .r4 { width: 60px; height: 60px; border-color: rgba(232, 64, 64, 0.8); border-width: 2px; animation-delay: 1.2s; }
+
+  @keyframes pulse-ring {
+    0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.03); }
+  }
+
+  /* Crosshairs */
+  .crosshair-h, .crosshair-v {
+    position: absolute;
+    background: rgba(232, 64, 64, 0.4);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .crosshair-h { width: 300px; height: 1px; }
+  .crosshair-v { width: 1px; height: 300px; }
+
+  /* Center dot */
+  .center-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #e84040;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px #e84040, 0 0 40px rgba(232, 64, 64, 0.5);
+    animation: blink 2s ease-in-out infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* Data readout lines */
+  .data-readout {
+    position: absolute;
+    right: 30px;
+    top: 50px;
+    font-family: 'DM Sans', monospace;
+    font-size: 9px;
+    color: rgba(100, 200, 100, 0.5);
+    letter-spacing: 0.08em;
+    line-height: 1.9;
+    text-align: right;
+  }
+
+  .data-readout span { display: block; }
+  .data-readout .val { color: rgba(130, 230, 130, 0.7); }
+
+  /* Bottom bar */
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    padding: 0 70px;
+    gap: 40px;
+    background: rgba(0,0,0,0.3);
+  }
+
+  .bottom-item {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: rgba(180,175,170,0.35);
+    text-transform: uppercase;
+  }
+
+  .bottom-item.accent { color: rgba(232, 64, 64, 0.6); }
+
+  .dot-sep { width: 3px; height: 3px; background: rgba(255,255,255,0.12); border-radius: 50%; }
+
+  /* Anthropic badge */
+  .anthropic-badge {
+    position: absolute;
+    top: 36px;
+    right: 36px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.04);
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #e84040;
+    box-shadow: 0 0 8px #e84040;
+    animation: blink 1.5s ease-in-out infinite;
+  }
+
+  .badge-text {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: rgba(200,195,190,0.6);
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="bg-layer"></div>
+  <div class="grid"></div>
+  <div class="circuit"></div>
+  <div class="orb"></div>
+  <div class="scanline"></div>
+
+  <!-- Anthropic badge -->
+  <div class="anthropic-badge">
+    <div class="badge-dot"></div>
+    <div class="badge-text">Live Operation</div>
+  </div>
+
+  <!-- Left content -->
+  <div class="content">
+    <div class="eyebrow">
+      <div class="eyebrow-line"></div>
+      <div class="eyebrow-text">AI in Active Warfare · March 2026</div>
+    </div>
+
+    <div class="headline">
+      <span class="red">CLAUDE</span><br>
+      <span class="dim">WENT</span><br>
+      TO <span class="red">WAR</span>
+    </div>
+
+    <div class="subline">
+      The AI you use to write emails<br>helped strike 1,000+ targets in Iran.
+    </div>
+
+    <div class="stats">
+      <div class="stat-box">
+        <div class="stat-num">1,000+</div>
+        <div class="stat-label">Targets Day One</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">24 HRS</div>
+        <div class="stat-label">First Deployment</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">$200M</div>
+        <div class="stat-label">DoD AI Contract</div>
+      </div>
+    </div>
+
+    <div class="tags">
+      <div class="tag hot">Intelligence</div>
+      <div class="tag hot">Target ID</div>
+      <div class="tag">War Simulations</div>
+      <div class="tag">Logistics</div>
+      <div class="tag">AI Ethics</div>
+    </div>
+  </div>
+
+  <!-- Right reticle visual -->
+  <div class="visual-panel">
+    <div class="reticle">
+      <div class="reticle-ring r1"></div>
+      <div class="reticle-ring r2"></div>
+      <div class="reticle-ring r3"></div>
+      <div class="reticle-ring r4"></div>
+      <div class="crosshair-h"></div>
+      <div class="crosshair-v"></div>
+      <div class="center-dot"></div>
+    </div>
+  </div>
+
+  <!-- Data readout -->
+  <div class="data-readout">
+    <span>SYSTEM · CENTCOM</span>
+    <span class="val">STATUS: ACTIVE</span>
+    <span>MODEL: CLAUDE GOV</span>
+    <span class="val">LAYER: CLASSIFIED</span>
+    <span>VIA: PALANTIR/AWS</span>
+    <span class="val">DATE: FEB 28, 2026</span>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="bottom-bar">
+    <span class="bottom-item accent">Anthropic × US CENTCOM</span>
+    <div class="dot-sep"></div>
+    <span class="bottom-item">Project Maven Integration</span>
+    <div class="dot-sep"></div>
+    <span class="bottom-item">Claude Gov · Palantir · AWS</span>
+    <div class="dot-sep"></div>
+    <span class="bottom-item accent">First Large-Scale AI Warfighting Deployment</span>
+  </div>
+</div>
+</body>
+</html>
